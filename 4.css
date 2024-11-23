@@ -1,0 +1,180 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-bottom: 2px solid #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ff99;
+    text-transform: uppercase;
+}
+
+header h1 .highlight {
+    color: #00ffff;
+}
+
+/* Navigation Menu Styling */
+main nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+main nav a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border: 2px solid #00ff99;
+    border-radius: 5px;
+    color: #00ff99;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+main nav a:hover {
+    background-color: #00ff99;
+    color: #0d0d0d;
+}
+
+/* Page Title Styling */
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px auto;
+    color: #00ff99;
+    text-transform: uppercase;
+}
+
+/* Buttons in Grid Layout */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 buttons per row */
+    gap: 10px; /* Space between grid items */
+    justify-items: center;
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 15px;
+    background: #1e1e1e;
+    border: 2px solid #00ff99;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+/* Buttons Styling */
+.buttons-grid a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 10px;
+    width: 90%;
+    height: 60px;
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Orbitron", sans-serif;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #00ff99;
+    border: none;
+    background: transparent;
+}
+
+.button-home {
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.button-home::before,
+.button-home::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background: #00ff99;
+    transform: scale(0.7);
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.button-home::before {
+    left: 5%;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.button-home::after {
+    right: 5%;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.button-home:hover::before,
+.button-home:hover::after {
+    transform: scale(1);
+    opacity: 0.5;
+}
+
+.button-home:hover {
+    background: #00ff99;
+    color: #0d0d0d;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #00ff99;
+    border-top: 2px solid #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+    margin-top: auto;
+}
+
+/* Responsive Grid for Mobile */
+@media (max-width: 768px) {
+    .buttons-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three buttons per row */
+        gap: 5px; /* Smaller gap between buttons */
+    }
+
+    .button {
+        height: 50px; /* Smaller height for buttons */
+        font-size: 0.8rem; /* Slightly smaller text */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Adjust header size */
+    }
+
+    .page-title {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+}
